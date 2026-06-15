@@ -1,0 +1,681 @@
+/*──────────────────────────────────────────────
+  ICA — Mixed Dark/Light Theme
+──────────────────────────────────────────────*/
+
+// Utility: section backgrounds
+.ica-dark {
+  background: #0a0a0a !important;
+  h1, h2, h3, h4, h5, h6,
+  .sec-title, .breadcumb-title,
+  .hero-title, .cta-title {
+    color: #fff;
+  }
+  .sec-text, p, .hero-subtitle,
+  .hero-caption, .cta-text,
+  .showcase-text, .filosofi-text,
+  .about-hero-text, .mentor-bio,
+  .testimonial-text, .timeline-text,
+  .jadwal-activity, .product-desc,
+  .alumni-role, .founder-quote,
+  .filosofi-highlight, .alumni-company {
+    color: #bbb;
+  }
+  .founder-name, .testimonial-role,
+  .mentor-role, .alumni-company {
+    color: #888;
+  }
+  .program-card, .testimonial-card,
+  .mentor-card, .product-card,
+  .kurikulum-card, .problem-box,
+  .solution-box, .alumni-item {
+    background: #161616;
+  }
+}
+
+.ica-light {
+  background: #fff !important;
+}
+
+.ica-smoke {
+  background: #f8f8f8 !important;
+}
+
+/* Hero */
+.ica-hero {
+  position: relative;
+  background: #0a0a0a;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top, rgba(10,10,10,0.6) 0%, transparent 100%);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero-title {
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -3px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .hero-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: #999;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+  @include lg {
+    .hero-title { font-size: 72px; letter-spacing: -2px; }
+    .hero-subtitle { font-size: 18px; }
+  }
+  @include sm {
+    .hero-title { font-size: 44px; letter-spacing: -1px; }
+    .hero-subtitle { font-size: 16px; margin-top: 16px; }
+  }
+  @include xs {
+    .hero-title { font-size: 34px; }
+  }
+}
+
+/* Founder */
+.ica-founder {
+  background: #fff;
+  .founder-quote {
+    font-size: 28px;
+    line-height: 1.6;
+    font-weight: 500;
+    color: #111;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    @include sm { font-size: 20px; }
+  }
+  .founder-name {
+    font-size: 16px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 40px;
+    text-align: center;
+  }
+}
+
+/* Problem & Solution */
+.ica-problem-solution {
+  .problem-box {
+    background: #f8f8f8;
+    padding: 60px 50px;
+    border-left: 4px solid #C5A55A;
+    height: 100%;
+    transition: 0.3s;
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #999;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+    }
+  }
+  .solution-box {
+    background: #0a0a0a;
+    padding: 60px 50px;
+    border-left: 4px solid #C5A55A;
+    height: 100%;
+    transition: 0.3s;
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+    h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #ccc;
+    }
+  }
+  @include xs {
+    .problem-box, .solution-box { padding: 40px 30px; }
+  }
+}
+
+/* Program Highlight */
+.ica-program-highlight {
+  background: #0a0a0a;
+  .sec-title { color: #fff; }
+  .sec-text { color: #bbb; }
+  .program-card {
+    background: #161616;
+    padding: 50px 40px;
+    border: 1px solid #222;
+    transition: 0.3s;
+    height: 100%;
+    &:hover {
+      border-color: #C5A55A;
+      transform: translateY(-4px);
+    }
+    h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #999;
+      margin-bottom: 0;
+    }
+    .program-icon {
+      width: 48px;
+      height: 48px;
+      background: #C5A55A;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+/* Showcase */
+.ica-showcase {
+  background: #fff;
+  .showcase-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+  }
+}
+
+/* CTA */
+.ica-cta {
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+  .cta-title {
+    font-size: 64px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    @include sm { font-size: 36px; }
+  }
+  .cta-text {
+    color: #999;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+}
+
+/* About Hero */
+.ica-about-hero {
+  background: #0a0a0a;
+  .sec-title, h1, h2, h3 { color: #fff; }
+  .sec-text, p { color: #bbb; }
+  .about-hero-text {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #bbb;
+    max-width: 800px;
+  }
+}
+
+/* Filosofi */
+.ica-filosofi {
+  background: #fff;
+  .filosofi-text {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #444;
+    max-width: 800px;
+  }
+  .filosofi-highlight {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #999;
+    margin-bottom: 20px;
+  }
+}
+
+/* Mentor */
+.ica-mentor {
+  background: #0a0a0a;
+  .sec-title { color: #fff; }
+  .sec-text { color: #bbb; }
+  .mentor-card {
+    text-align: center;
+    padding: 40px 30px;
+    border: 1px solid #222;
+    background: #161616;
+    transition: 0.3s;
+    height: 100%;
+    &:hover {
+      border-color: #C5A55A;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+    .mentor-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    .mentor-role {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 16px;
+    }
+    .mentor-bio {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #999;
+    }
+  }
+}
+
+/* Timeline */
+.ica-timeline {
+  position: relative;
+  padding-left: 30px;
+  .timeline-item {
+    position: relative;
+    padding-bottom: 40px;
+    padding-left: 30px;
+    border-left: 2px solid #ddd;
+    &:last-child {
+      border-left-color: transparent;
+      padding-bottom: 0;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      background: #C5A55A;
+      border-radius: 50%;
+    }
+    .timeline-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #111;
+    }
+    .timeline-text {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+    }
+  }
+}
+
+/* Kurikulum */
+.ica-kurikulum {
+  .kurikulum-card {
+    background: #222;
+    padding: 30px;
+    height: 100%;
+    transition: 0.3s;
+    &:hover {
+      background: #C5A55A;
+      h4, p { color: #000; }
+      span { color: #666 !important; }
+    }
+    h4 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 14px;
+      color: #bbb;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+  }
+}
+
+/* Testimonial */
+.ica-testimonial {
+  background: #0a0a0a;
+  .sec-title {
+    color: #fff;
+  }
+  .sec-text {
+    color: #bbb;
+  }
+  .testimonial-card {
+    background: #161616;
+    padding: 40px;
+    border: 1px solid #222;
+    height: 100%;
+    transition: 0.3s;
+    &:hover {
+      border-color: #C5A55A;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+    .testimonial-text {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #ccc;
+      font-style: italic;
+    }
+    .testimonial-author {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 20px;
+    }
+    .testimonial-role {
+      font-size: 13px;
+      color: #888;
+    }
+  }
+}
+
+/* Jadwal */
+.ica-jadwal {
+  .jadwal-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    &:last-child { border-bottom: none; }
+    .jadwal-time {
+      font-size: 14px;
+      font-weight: 600;
+      color: #C5A55A;
+      min-width: 140px;
+      flex-shrink: 0;
+    }
+    .jadwal-activity {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+    }
+  }
+}
+
+/* Product Card */
+.ica-product-card {
+  border: 1px solid #eee;
+  padding: 30px;
+  text-align: center;
+  background: #fff;
+  transition: 0.3s;
+  &:hover {
+    border-color: #C5A55A;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .product-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+  .product-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #C5A55A;
+    margin-bottom: 16px;
+  }
+  .product-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+}
+
+/* Alumni Grid */
+.ica-alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #ddd;
+  .alumni-item {
+    background: #fff;
+    padding: 30px;
+    text-align: center;
+    .alumni-company {
+      font-size: 14px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .alumni-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 4px;
+    }
+    .alumni-role {
+      font-size: 14px;
+      color: #666;
+    }
+  }
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include xs {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Header — dark with yellow accent */
+.ica-header {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: 0.3s ease;
+
+  &.header-sticky {
+    background: rgba(5,5,5,0.98);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+
+  .sticky-wrapper {
+    padding: 0 36px;
+    @include xs { padding: 0 16px; }
+  }
+
+  .header-logo {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    a {
+      font-family: $title-font;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .main-menu {
+    > ul {
+      margin: 0 -16px !important;
+      > li {
+        margin: 0;
+        > a {
+          padding: 34.5px 16px;
+          display: block;
+          position: relative;
+          font-weight: 500;
+          font-family: $title-font;
+          font-size: 14px;
+          color: rgba(255,255,255,0.7);
+          letter-spacing: -0.14px;
+          text-decoration: none;
+          transition: 0.3s;
+          &:hover { color: #fff; }
+          .link-effect {
+            height: 16px;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            .effect-1 {
+              display: block;
+              position: relative;
+              top: 0;
+              transition: 0.3s;
+            }
+          }
+          &:hover .link-effect .effect-1 { top: -100%; }
+        }
+        &.active > a {
+          color: #C5A55A;
+          &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 16px;
+            right: 16px;
+            height: 2px;
+            background: #C5A55A;
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar-btn {
+    border: none;
+    background: transparent;
+    padding: 8px;
+    cursor: pointer;
+    margin: 18px 0;
+    .line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+  }
+}
+
+@include md {
+  .ica-header {
+    .sticky-wrapper { padding: 0 36px; }
+    .sidebar-btn { margin: 0; }
+  }
+}
+
+/* Form controls */
+.form-control {
+  background: #fff;
+  border-color: #ddd;
+  color: #555;
+  border-radius: 0;
+  &:focus {
+    background: #fff;
+    border-color: #111;
+    color: #111;
+    box-shadow: none;
+  }
+}
+
+/* ─── ICA Badge ─── */
+.ica-badge {
+  display: inline-block;
+}
+
+/* ─── Scroll Reveal Animations ─── */
+.ica-reveal-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(.645,.045,.355,1), transform 0.8s cubic-bezier(.645,.045,.355,1);
+}
+.ica-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ica-reveal-delay-1 { transition-delay: 0.15s; }
+.ica-reveal-delay-2 { transition-delay: 0.3s; }
+.ica-reveal-delay-3 { transition-delay: 0.45s; }
+
+/* ─── Responsive Hero ─── */
+@media (max-width: 767px) {
+  section.ica-hero {
+    .hero-title {
+      font-size: 44px !important;
+      letter-spacing: -1px !important;
+    }
+    .hero-subtitle {
+      font-size: 16px !important;
+      max-width: 100% !important;
+    }
+    .row {
+      padding-bottom: 40px !important;
+    }
+    .container {
+      padding-top: 80px;
+    }
+    .col-lg-8 {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    .ica-badge {
+      font-size: 13px !important;
+      letter-spacing: 2px !important;
+      padding: 6px 16px !important;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  section.ica-hero {
+    .hero-title {
+      font-size: 34px !important;
+    }
+    .hero-subtitle {
+      font-size: 15px !important;
+    }
+  }
+}
