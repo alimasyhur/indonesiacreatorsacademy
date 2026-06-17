@@ -31,7 +31,7 @@ export default function ICAHeader() {
           </button>
           <div className="mobile-logo">
             <Link href="/">
-              <img src="/assets/img/ica-logo-transparant.png" alt="ICA" height="30" style={{ display: "block" }} />
+              <img src="/assets/img/ica-logo-transparant-black.png" alt="ICA" height="30" style={{ display: "block" }} />
             </Link>
           </div>
           <div className="mobile-menu">
@@ -41,7 +41,7 @@ export default function ICAHeader() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    style={{ color: pathname === item.href ? "#C5A55A" : "#111", fontWeight: pathname === item.href ? 700 : 400 }}
+                    style={{ color: pathname === item.href ? "#b2bec3" : "#111", fontWeight: pathname === item.href ? 700 : 400 }}
                   >
                     {item.label}
                   </Link>
